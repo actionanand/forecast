@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import logo from '../../public/img/logo.png';
+import logo from '../../public/img/weather_storm.png';
 
 import './navbar.css';
 
