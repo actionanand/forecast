@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand navbar-img-wrap" ng-href="/">
+        <img alt="{{logoName}}" src="{{logoImg}}" class="navbar-img-wrap-icon">
+      </a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-repeat="link in myLinks">
+          <a ng-href="{{link.link}}">{{link.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

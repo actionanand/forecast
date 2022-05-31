@@ -1,0 +1,14 @@
+.navbar-img-wrap {
+  padding: 0 !important;
+}
+
+.navbar-img-wrap-icon {
+  height: 50px;
+  padding: 8px;
+}
+
+.navbar-wrap {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid red;
+}
