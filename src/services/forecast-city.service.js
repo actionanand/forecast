@@ -2,7 +2,7 @@ import angular from 'angular';
 
 class forecastCity {
   constructor() {
-    this.city = 'New York, NY';
+    this.city = 'London,uk';
   }
 
   // getName() {

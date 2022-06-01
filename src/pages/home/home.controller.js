@@ -1,9 +1,9 @@
 export default class HomeController {
-  constructor(forecastCity, $log, $scope, $resource) {
+  constructor($log, $scope, forecastCity) {
     this.forecastCityServ = forecastCity;
     this.inputName = 'chennai, Tamilnadu';
     this.inputName = this.forecastCityServ.city;
-    $log.log($resource);
+    $log.log(this.inputName);
 
     // updating the value of 'sharedName' in the service whenever 'inputName' changes, through watch
     $scope.$watch(() => this.inputName, function (newVal, oldvalue) {
@@ -13,4 +13,4 @@ export default class HomeController {
 
 }
 
-HomeController.$inject = ['forecastCity', '$log', '$scope', '$resource'];
+HomeController.$inject = ['$log', '$scope', 'forecastCity'];
