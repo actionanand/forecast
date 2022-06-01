@@ -1,7 +1,8 @@
 export default class HomeController {
-  constructor(randomNames) {
+  constructor(randomNames, $resource) {
     this.randomNameServ = randomNames;
     this.name = 'World';
+    console.log($resource);
   }
 
   changeName() {
@@ -13,4 +14,4 @@ export default class HomeController {
   }
 }
 
-HomeController.$inject = ['randomNames'];
+HomeController.$inject = ['randomNames', '$resource'];
