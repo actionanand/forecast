@@ -1,6 +1,9 @@
-<div id="home-header" class="jumbotron">
-  <greeting name="home.name"> <p>Javascript is everywhere. I'm transcluded text.</p> </greeting>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h4>Forecast by city</h4>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="home.inputName" />
+    </div>
+    <a ng-href="forecast" class="btn btn-success"> Get Forecast </a>
+  </div>
 </div>
-
-<button class="btn btn-primary" ng-click="home.changeName()">Change</button>
-<button class="btn btn-danger" ng-click="home.randomName()">Random</button>

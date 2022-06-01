@@ -6,10 +6,9 @@ import './home.css';
 
 import routing from './home.routes';
 import HomeController from './home.controller';
-import randomNames from '../../services/randomNames.service';
-import greeting    from '../../directives/greeting/greeting.directive';
+import forecastCity from '../../services/forecast-city.service';
 
-export default angular.module('app.home', [uirouter, ngResource, randomNames, greeting])
+export default angular.module('app.home', [uirouter, ngResource, forecastCity])
   .config(routing)
   .controller('HomeController', HomeController)
   .name;

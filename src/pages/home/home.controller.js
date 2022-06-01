@@ -1,17 +1,16 @@
 export default class HomeController {
-  constructor(randomNames, $resource) {
-    this.randomNameServ = randomNames;
-    this.name = 'World';
-    console.log($resource);
+  constructor(forecastCity, $log, $scope, $resource) {
+    this.forecastCityServ = forecastCity;
+    this.inputName = 'chennai, Tamilnadu';
+    this.inputName = this.forecastCityServ.city;
+    $log.log($resource);
+
+    // updating the value of 'sharedName' in the service whenever 'inputName' changes, through watch
+    $scope.$watch(() => this.inputName, function (newVal, oldvalue) {
+      forecastCity.city = newVal;
+    });
   }
 
-  changeName() {
-    this.name = 'angular-tips';
-  }
-
-  randomName() {
-    this.name = this.randomNameServ.getName();
-  }
 }
 
-HomeController.$inject = ['randomNames', '$resource'];
+HomeController.$inject = ['forecastCity', '$log', '$scope', '$resource'];
