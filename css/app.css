@@ -261,8 +261,8 @@ th {
 }
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: url(/angularjs-webpack/f4769f9bdb7466be65088239c12046d1_glyphicons-halflings-regular.eot);
-  src: url(/angularjs-webpack/f4769f9bdb7466be65088239c12046d1_glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(/angularjs-webpack/448c34a56d699c29117adc64c43affeb_glyphicons-halflings-regular.woff2) format("woff2"), url(/angularjs-webpack/fa2772327f55d8198301fdb8bcfc8158_glyphicons-halflings-regular.woff) format("woff"), url(/angularjs-webpack/e18bbf611f2a2e43afc071aa2f4e1512_glyphicons-halflings-regular.ttf) format("truetype"), url(/angularjs-webpack/89889688147bd7575d6327160d64e760_glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg");
+  src: url(/forecast/f4769f9bdb7466be65088239c12046d1_glyphicons-halflings-regular.eot);
+  src: url(/forecast/f4769f9bdb7466be65088239c12046d1_glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(/forecast/448c34a56d699c29117adc64c43affeb_glyphicons-halflings-regular.woff2) format("woff2"), url(/forecast/fa2772327f55d8198301fdb8bcfc8158_glyphicons-halflings-regular.woff) format("woff"), url(/forecast/e18bbf611f2a2e43afc071aa2f4e1512_glyphicons-halflings-regular.ttf) format("truetype"), url(/forecast/89889688147bd7575d6327160d64e760_glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg");
 }
 .glyphicon {
   position: relative;
