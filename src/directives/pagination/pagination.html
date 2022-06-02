@@ -1,12 +1,12 @@
 <nav aria-label="...">
   <ul class="pagination">
-    <li class="page-item" ng-class="{'disabled': {{pageObj.day}} == {{pageObj.firstP}} }">
+    <li class="page-item css-hover-effect" ng-class="{'disabled': {{pageObj.day}} == {{pageObj.firstP}} }">
       <a class="page-link" ng-click="prevPage()" tabindex="-1">Previous</a>
     </li>
     <li class="page-item" ng-repeat="page in pageObj.pageArray" ng-class="{'active': {{page}} == {{pageObj.day}} }">
       <a class="page-link" ng-href="{{pageObj.url + '/' + page }}">{{page}}</a>
     </li>
-    <li class="page-item" ng-class="{'disabled': {{pageObj.day}} == {{pageObj.lastP}} }">
+    <li class="page-item css-hover-effect" ng-class="{'disabled': {{pageObj.day}} == {{pageObj.lastP}} }">
       <a class="page-link" ng-click="nextPage()">Next</a>
     </li>
   </ul>
