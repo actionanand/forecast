@@ -1,11 +1,18 @@
 <p>
-    <a ng-href="/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Back to search</a>
+    <a ng-href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> back to search</a>
 </p>
-<h2>{{ forecast.weatherResult.city.name }}</h2>
-<h3>3 hours forecast data upto 5 days in IST.</h3>
 
-<hr>
-Time slots: <pagination page-obj="forecast.paginationObj"></pagination>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container jumbo-wrap">
+      <h1 class="display-4">{{ forecast.weatherResult.city.name }}</h1>
+      <p class="lead">3 hours forecast data upto 5 days in IST.</p>
+    </div>
+</div>
+
+<div>
+    Time slots: <pagination page-obj="forecast.paginationObj"></pagination>
+</div>
+
 <hr>
 
 <div ng-repeat="w in forecast.weatherResult.list">
