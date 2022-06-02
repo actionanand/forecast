@@ -1,5 +1,5 @@
 export default class ForecastController {
-  constructor($resource, $http, forecastCity) {
+  constructor($resource, $http, $stateParams, forecastCity) {
     
     this.forecastCityServ = forecastCity;
     this.cityName = 'new input';
@@ -11,6 +11,7 @@ export default class ForecastController {
     this.forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
     this.appId = 'a2faa5d1f516e9f9615640d8abd37bef';
     this.units = 'metric'
+    this.day = $stateParams.day || 1;
 
     this.weatherResult = '';
 
@@ -18,7 +19,7 @@ export default class ForecastController {
     // $http({
     //   method: 'GET',
     //   url: this.forecastUrl,
-    //   params: {q: this.cityName, cnt: 2, APPID: this.appId}
+    //   params: {q: this.cityName, cnt: this.day, APPID: this.appId}
     // }).then(function(resp) {
     //   console.log(resp.data);
     // }, function(err) {
@@ -26,10 +27,9 @@ export default class ForecastController {
     // })
 
 
-    $resource(this.forecastUrl).get({q: this.cityName, cnt: 10, units: this.units, APPID: this.appId}).$promise.then((resp) => {
+    $resource(this.forecastUrl).get({q: this.cityName, cnt: this.day, units: this.units, APPID: this.appId}).$promise.then((resp) => {
       console.log(resp);
       this.weatherResult = resp;
-      // console.log(new Date(this.weatherResult.dt * 1000));
     }, (err) => {
       console.log(err);
     });
@@ -42,4 +42,4 @@ export default class ForecastController {
   
 }
 
-ForecastController.$inject = ['$resource', '$http', 'forecastCity'];
+ForecastController.$inject = ['$resource', '$http', '$stateParams', 'forecastCity'];
