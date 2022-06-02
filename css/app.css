@@ -6825,5 +6825,7 @@ button.close {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 2px solid red;
+}.css-hover-effect {
+  cursor: pointer;
 }
 /*# sourceMappingURL=app.css.map*/
