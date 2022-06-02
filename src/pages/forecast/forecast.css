@@ -3,3 +3,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+.jumbo-wrap-msg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-wrap {
+  font-size: 13px;
+}

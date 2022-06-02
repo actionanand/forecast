@@ -38,6 +38,7 @@ export default class ForecastController {
       this.weatherResult = resp;
     }, (err) => {
       console.log(err);
+      this.weatherResult = err.data;
     });
 
     this.convertToDate = function(dt) { 
