@@ -47,7 +47,7 @@ module.exports = function makeWebpackConfig() {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: isProd ? '/angularjs-webpack/' : '/',
+    publicPath: isProd ? '/forecast/' : '/',
 
     // Filename for entry points
     // Only adds hash in build mode
