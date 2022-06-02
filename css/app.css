@@ -6795,6 +6795,19 @@ button.close {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.jumbo-wrap-msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.label-wrap {
+  font-size: 13px;
 }.navbar-img-wrap {
   padding: 0 !important;
 }
