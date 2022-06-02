@@ -1,4 +1,9 @@
-Forecast for {{ forecast.cityName }} in IST.
+<h2>{{ forecast.weatherResult.city.name }}</h2>
+<h3>3 hours forecast data upto 5 days in IST.</h3>
+
+<hr>
+Time slots: <pagination page-obj="forecast.paginationObj"></pagination>
+<hr>
 
 <div ng-repeat="w in forecast.weatherResult.list">
     <div class="row">

@@ -11,10 +11,16 @@ export default class ForecastController {
     this.forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
     this.appId = 'a2faa5d1f516e9f9615640d8abd37bef';
     this.units = 'metric'
-    this.day = $stateParams.day || 1;
+    this.day = $stateParams.day || 3;
 
     this.weatherResult = '';
-
+    this.paginationObj = {
+      pageArray: [1, 5, 7, 13, 20, 27, 35, 40],
+      url: 'forecast',
+      day: this.day,
+      firstP: 1,
+      lastP: 40
+    }; 
 
     // $http({
     //   method: 'GET',

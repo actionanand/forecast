@@ -11,7 +11,6 @@ export default function routes($stateProvider) {
     .state('forecastWithId', {
       url: '/forecast/:day',
       template: require('./forecast.html'),
-      controller: 'ForecastController',
-      controllerAs: 'forecast'
+      controller: 'ForecastController as forecast'
     })
 }

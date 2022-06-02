@@ -34,3 +34,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 - [Why do I have to use $promise with $resource?](https://stackoverflow.com/questions/36552509/why-do-i-have-to-use-promise-with-resource)
 - [How to use AngularJS $resource](https://www.agiliq.com/blog/2019/11/how-to-use-angularjs-resource/)
 - [date filter in angularjs](https://docs.angularjs.org/api/ng/filter/date)
+- [Unknown provider: $routeParamsProvider <- $routeParams - usage of $stateParams](https://stackoverflow.com/questions/35662613/unknown-provider-routeparamsprovider-routeparams)
+- [A parameter of ui-router in controller and resolve](https://stackoverflow.com/questions/42800578/a-parameter-of-ui-router-in-controller-and-resolve)
+- [how to pass in state parameter to ui-router?](https://stackoverflow.com/questions/32283691/how-to-pass-in-state-parameter-to-ui-router)
+- [AngularJS UI Router Parameters](https://www.c-sharpcorner.com/article/angularjs-ui-router-parameters/)
