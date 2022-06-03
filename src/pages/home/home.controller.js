@@ -1,5 +1,5 @@
 export default class HomeController {
-  constructor($log, $scope, forecastCity) {
+  constructor($log, $scope, $location, forecastCity) {
     this.forecastCityServ = forecastCity;
     this.inputName = 'chennai, Tamilnadu';
     this.inputName = this.forecastCityServ.city;
@@ -9,8 +9,16 @@ export default class HomeController {
     $scope.$watch(() => this.inputName, function (newVal, oldvalue) {
       forecastCity.city = newVal;
     });
+
+    this.onSubmitForecast = function() {
+      $location.path('forecast');
+    }
   }
+
+  // onSubmitForecast() {
+  //   alert('submited!');
+  // }
 
 }
 
-HomeController.$inject = ['$log', '$scope', 'forecastCity'];
+HomeController.$inject = ['$log', '$scope', '$location', 'forecastCity'];
