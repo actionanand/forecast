@@ -1,84 +1,81 @@
 <p>
-    <a ng-href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> back to search</a>
+  <a ng-href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> back to search</a>
 </p>
 
-
-
 <div class="jumbotron jumbotron-fluid">
-    <div ng-if="forecast.weatherResult.cod != '404'">
-        <div class="container jumbo-wrap">
-            <h1 class="display-4">{{ forecast.weatherResult.city.name }}, {{ forecast.weatherResult.city.country }}</h1>
-            <p class="lead">3 hours forecast data upto 5 days in IST.</p>
-        </div>
-        <hr class="my-4">
-        <div class="lead jumbo-wrap-msg">
-            <div>
-                Sun rise
-                <span class="badge">
-                    {{forecast.convertToDate(forecast.weatherResult.city.sunrise) | date: 'hh.ss a'}}
-                </span>
-                | Sun set 
-                <span class="badge">
-                    {{forecast.convertToDate(forecast.weatherResult.city.sunset) | date: 'hh.ss a'}}
-                </span>
-            </div>
-            <div>
-                Min. Temp
-                <span class="badge">
-                    {{ forecast.weatherResult.list[0].main.temp_min }}&#8451;
-                </span>
-                | Max. Temp
-                <span class="badge">
-                    {{ forecast.weatherResult.list[0].main.temp_max }}&#8451;
-                </span>
-            </div>
+  <div ng-if="forecast.weatherResult.cod != '404'">
+    <div class="container jumbo-wrap">
+      <h1 class="display-4">{{ forecast.weatherResult.city.name }}, {{ forecast.weatherResult.city.country }}</h1>
+      <p class="lead">3 hours forecast data upto 5 days in IST.</p>
+    </div>
+    <hr class="my-4">
+    <div class="lead jumbo-wrap-msg">
+      <div>
+        Sun rise
+        <span class="badge">
+          {{forecast.convertToDate(forecast.weatherResult.city.sunrise) | date: 'hh.ss a'}}
+        </span>
+        | Sun set 
+        <span class="badge">
+          {{forecast.convertToDate(forecast.weatherResult.city.sunset) | date: 'hh.ss a'}}
+        </span>
+      </div>
+        <div>
+          Min. Temp
+          <span class="badge">
+            {{ forecast.weatherResult.list[0].main.temp_min }}&#8451;
+          </span>
+          | Max. Temp
+          <span class="badge">
+            {{ forecast.weatherResult.list[0].main.temp_max }}&#8451;
+          </span>
         </div>
     </div>
-    <div ng-if="forecast.weatherResult.cod == 404" class="jumbo-wrap">
-        <h1 class="display-4"> 
-            <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> 
-            {{forecast.weatherResult.message}}
-         </h1>
-    </div>
-
+  </div>
+  <div ng-if="forecast.weatherResult.cod == 404" class="jumbo-wrap">
+    <h1 class="display-4"> 
+      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> 
+      {{forecast.weatherResult.message}}
+    </h1>
+  </div>
 </div>
 
 <div>
-    Time slots: <pagination page-obj="forecast.paginationObj"></pagination>
+  Time slots: <pagination page-obj="forecast.paginationObj"></pagination>
 </div>
 
 <hr>
 
 <div ng-repeat="w in forecast.weatherResult.list">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        {{ forecast.convertToDate(w.dt) | date: 'MMM d, yyyy - hh.ss a' : '+0530' }}
-                        &nbsp; <span class="badge"> {{w.weather[0].description}} </span>
-                    </h3>
-                </div>
-                <div class="jumbo-wrap-msg">
-                    <div class="panel-body">
-                        {{w.sys.pod == 'd' ? 'Day time' : 'Night time'}} : 
-                        <span class="label label-success label-wrap"> {{ w.main.temp }}&#8451; </span>
-                    </div>
-                    <div class="panel-body">
-                        Humidity <span class="badge"> {{w.main.humidity}}% </span> |
-                        Pressure 
-                        <span class="badge"> Sea Level {{w.main.sea_level}} hPa </span> 
-                        <span class="badge"> Ground Level {{w.main.grnd_level}} hPa </span> 
-                        <span class="badge"> Default at Sea Level {{w.main.pressure}} hPa </span> |
-                        Wind
-                        <span class="badge"> {{w.wind.speed}} m/s </span> 
-                        <span class="badge"> {{w.wind.deg}} &#176; </span> 
-                        <span class="badge"> Gust {{w.wind.gust}} m/s </span> 
-                    </div>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{ forecast.convertToDate(w.dt) | date: 'MMM d, yyyy - hh.ss a' : '+0530' }}
+            &nbsp; <span class="badge"> {{w.weather[0].description}} </span>
+          </h3>
         </div>
+        <div class="jumbo-wrap-msg">
+          <div class="panel-body">
+            {{w.sys.pod == 'd' ? 'Day time' : 'Night time'}} : 
+            <span class="label label-success label-wrap"> {{ w.main.temp }}&#8451; </span>
+          </div>
+          <div class="panel-body">
+            Humidity <span class="badge"> {{w.main.humidity}}% </span> |
+            Pressure 
+            <span class="badge"> Sea Level {{w.main.sea_level}} hPa </span> 
+            <span class="badge"> Ground Level {{w.main.grnd_level}} hPa </span> 
+            <span class="badge"> Default at Sea Level {{w.main.pressure}} hPa </span> |
+            Wind
+            <span class="badge"> {{w.wind.speed}} m/s </span> 
+            <span class="badge"> {{w.wind.deg}} &#176; </span> 
+            <span class="badge"> Gust {{w.wind.gust}} m/s </span> 
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <hr>

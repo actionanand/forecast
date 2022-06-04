@@ -38,3 +38,5 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 - [A parameter of ui-router in controller and resolve](https://stackoverflow.com/questions/42800578/a-parameter-of-ui-router-in-controller-and-resolve)
 - [how to pass in state parameter to ui-router?](https://stackoverflow.com/questions/32283691/how-to-pass-in-state-parameter-to-ui-router)
 - [AngularJS UI Router Parameters](https://www.c-sharpcorner.com/article/angularjs-ui-router-parameters/)
+- [Angular async service](https://stackoverflow.com/questions/37543991/angular-async-service)
+- [All about $q and Promises in Angular](https://ultimatecourses.com/blog/promises-angular-q)

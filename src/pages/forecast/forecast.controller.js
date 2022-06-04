@@ -1,19 +1,16 @@
 export default class ForecastController {
-  constructor($resource, $http, $stateParams, forecastCity) {
+  constructor($q, $stateParams, forecastCityService, forecastService) {
     
-    this.forecastCityServ = forecastCity;
-    this.cityName = 'new input';
-    this.cityName = this.forecastCityServ.city;
-    console.log(this.cityName)
+    this.forecastCityServ = forecastCityService;
+    this.forecastServ = forecastService;
 
-    // this.weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
-    // this.sapleGithubUrl = 'https://api.github.com/users/fikkatra';
-    this.forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
-    this.appId = 'a2faa5d1f516e9f9615640d8abd37bef';
-    this.units = 'metric'
+    this.cityName = 'bangalore, In';
+    this.cityName = this.forecastCityServ.city;
+
+    console.log('Typed city is ',this.cityName)
+
     this.day = $stateParams.day || 3;
 
-    this.weatherResult = '';
     this.paginationObj = {
       pageArray: [1, 5, 7, 13, 20, 27, 35, 40],
       url: 'forecast',
@@ -22,24 +19,20 @@ export default class ForecastController {
       lastP: 40
     }; 
 
-    // $http({
-    //   method: 'GET',
-    //   url: this.forecastUrl,
-    //   params: {q: this.cityName, cnt: this.day, APPID: this.appId}
-    // }).then(function(resp) {
-    //   console.log(resp.data);
-    // }, function(err) {
-    //   console.log(err);
-    // })
+    this.weatherResult = this.forecastServ.getForecast(this.cityName, this.day);
 
-
-    $resource(this.forecastUrl).get({q: this.cityName, cnt: this.day, units: this.units, APPID: this.appId}).$promise.then((resp) => {
-      console.log(resp);
+    $q.when(this.weatherResult).then((resp) => {
       this.weatherResult = resp;
-    }, (err) => {
-      console.log(err);
-      this.weatherResult = err.data;
     });
+
+    // $resource(this.forecastUrl).get({q: this.cityName, cnt: this.day, units: this.units, APPID: this.appId})
+    //   .$promise.then((resp) => {
+    //     console.log(resp);
+    //     this.weatherResult = resp;
+    // }, (err) => {
+    //   console.log(err);
+    //   this.weatherResult = err.data;
+    // });
 
     this.convertToDate = function(dt) { 
       return new Date(dt * 1000);
@@ -49,4 +42,4 @@ export default class ForecastController {
   
 }
 
-ForecastController.$inject = ['$resource', '$http', '$stateParams', 'forecastCity'];
+ForecastController.$inject = ['$q', '$stateParams', 'forecastCityService', 'forecastService'];
